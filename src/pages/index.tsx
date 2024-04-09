@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { GetServerSidePropsContext } from "next";
+import { getPage } from "@/sanity/get-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ data }: { data: any }) {
+  console.log("data", data);
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -115,4 +118,28 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  // const { search, water, seasons, care, sun, size } = ctx.query;
+
+  // const filter: Filter = {
+  //   search,
+  //   filter: {
+  //     water,
+  //     seasons,
+  //     care,
+  //     sun,
+  //     size,
+  //   },
+  // };
+
+  // const query = handleUpdateFilter(filter);
+  const data = await getPage();
+
+  return {
+    props: {
+      data,
+    },
+  };
 }
