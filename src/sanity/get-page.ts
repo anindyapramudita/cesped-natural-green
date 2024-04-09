@@ -1,10 +1,16 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
 
-export const getPage = async () => {
-  return client.fetch(groq`*[_type == "pages" && slug.current=="/" ]{
+type TGetPageProps = {
+  slug?: string;
+};
+
+export const getPage = async ({ slug }: TGetPageProps) => {
+  const currentSlug = slug ? slug : "/";
+  return client.fetch(groq`*[_type == "pages" && slug.current=="${currentSlug}" ]{
     _id,
     _createdAt,
+    title,
     sections,
       slug,
       hero,
