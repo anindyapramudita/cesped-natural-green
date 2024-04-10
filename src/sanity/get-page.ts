@@ -11,8 +11,17 @@ export const getPage = async ({ slug }: TGetPageProps) => {
     _id,
       title,
     sections,
-      slug,
-      hero,
+      "slug": slug.current,
+      hero{
+        buttons[]{
+          _key,
+          "slug": slug.current,
+          variant,
+          label
+        },
+        title,
+        subtitle
+      },
       navbar->{
         "color": navbarComponent.color,
         "logo": navbarComponent.logo->{
@@ -24,6 +33,7 @@ export const getPage = async ({ slug }: TGetPageProps) => {
           label,
           "slug": slug.current
         }
-      }
+      },
+      footer
   }`);
 };
