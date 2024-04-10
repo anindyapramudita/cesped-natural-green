@@ -7,7 +7,8 @@ export interface INavbarProps {
     links: {
       _key: string;
       label: string;
-      slug: string;
+      slug?: string;
+      href?: string;
     }[];
     color: boolean;
   };

@@ -35,7 +35,7 @@ export const Navbar: FC<INavbarProps> = ({ navbar, slug }) => {
                 }`}
               >
                 <a
-                  href={link?.slug}
+                  href={link?.slug || link?.href}
                   className={`${
                     slug !== link?.slug ? "cursor-pointer" : "cursor-default"
                   }`}
