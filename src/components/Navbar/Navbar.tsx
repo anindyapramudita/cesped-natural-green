@@ -25,15 +25,8 @@ export const Navbar: FC<INavbarProps> = ({ navbar, slug }) => {
             </button>
           )}
           {navbar?.links?.map((link: any) => {
-            console.log(`${slug} === ${link?.slug}`);
-            console.log("slug === link?.slug", slug === link?.slug);
             return (
-              <li
-                key={link?._key}
-                className={`relative ${
-                  slug !== link?.slug && "hover:translate-y-[-2px]"
-                }`}
-              >
+              <li key={link?._key} className="relative">
                 <a
                   href={link?.slug || link?.href}
                   className={`${
