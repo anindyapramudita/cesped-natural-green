@@ -7,20 +7,22 @@ type TGetPageProps = {
 
 export const getPage = async ({ slug }: TGetPageProps) => {
   const currentSlug = slug ? slug : "/";
-  return client.fetch(groq`*[_type == "pages" && slug.current=="${currentSlug}" ]{
+  return client.fetch(groq`*[_type == "pages" && slug.current=="${currentSlug}" ][0]{
     _id,
-    _createdAt,
-    title,
+      title,
     sections,
       slug,
       hero,
       navbar->{
-        defaultNavbar{
-        logo->{
-        "src": src.asset->url,
-        alt
+        "color": navbarComponent.color,
+        "logo": navbarComponent.logo->{
+          "src": src.asset->url,
+          alt
         },
-        links
+        "links": navbarComponent.links[]{
+          _key,
+          label,
+          "slug": slug.current
         }
       }
   }`);
