@@ -1,8 +1,15 @@
 import { getPage } from "@/sanity/get-page";
 import { Navbar } from "@/components";
 import { GetServerSidePropsContext } from "next";
+import { TPageData } from "@/shared/types/data.type";
 
-export default function Home({ data, slug }: { data: any; slug: string }) {
+export default function Home({
+  data,
+  slug,
+}: {
+  data: TPageData;
+  slug: string;
+}) {
   const { navbar } = data;
 
   return (
