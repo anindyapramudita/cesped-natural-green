@@ -20,6 +20,7 @@ const config: Config = {
       },
       colors: {
         "primary-green": "#809375",
+        "darker-green": "#75866B",
         "secondary-beige": "#FFFAF6",
         black: "#2A2A2A",
       },
