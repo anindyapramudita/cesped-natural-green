@@ -1,7 +1,7 @@
 import { getPage } from "@/sanity/get-page";
-import { Navbar } from "@/components";
+import { PageLayout } from "@/components";
 import { GetServerSidePropsContext } from "next";
-import { TPageData } from "@/shared/types/data.type";
+import { TPageData } from "@/shared/types/data.types";
 
 export default function Home({
   data,
@@ -10,13 +10,7 @@ export default function Home({
   data: TPageData;
   slug: string;
 }) {
-  const { navbar } = data;
-
-  return (
-    <main className="min-h-screen w-screen">
-      {navbar && <Navbar navbar={navbar} slug={slug} />}
-    </main>
-  );
+  return <PageLayout content={data} slug={slug} />;
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
