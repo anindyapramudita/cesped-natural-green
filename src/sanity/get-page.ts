@@ -20,7 +20,12 @@ export const getPage = async ({ slug }: TGetPageProps) => {
           label
         },
         title,
-        subtitle
+        highlightTitle,
+        subtitle,
+        heroImage[]->{
+          "src": src.asset->url,
+          alt
+        }
       },
       navbar->{
         "color": navbarComponent.color,
