@@ -1,8 +1,8 @@
 import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { INavbarProps } from "./navbar.types";
 import { MenuIcon } from "../Icons";
+import { INavbarProps } from ".";
 
 export const Navbar: FC<INavbarProps> = ({ navbar, slug }) => {
   const route = useRouter();

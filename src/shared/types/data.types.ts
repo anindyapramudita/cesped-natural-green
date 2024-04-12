@@ -11,6 +11,11 @@ export type TPageData = {
     }[];
     title: string;
     subtitle: string;
+    highlightTitle: string;
+    heroImage: {
+      src: string;
+      alt: string;
+    }[];
   };
   navbar: {
     color: boolean;
