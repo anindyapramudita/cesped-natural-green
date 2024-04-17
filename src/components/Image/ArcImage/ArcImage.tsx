@@ -4,8 +4,8 @@ import { IArcImageProps } from ".";
 
 export const ArcImage: FC<IArcImageProps> = ({ src, alt }) => {
   return (
-    <div className="flex items-end">
-      <div className="h-96 w-full max-w-80 lg:w-80 rounded-t-full overflow-hidden">
+    <div className="flex items-end justify-center md:justify-start">
+      <div className="h-96 w-full max-w-80 rounded-t-full overflow-hidden">
         <Image
           className="object-cover w-full h-full"
           src={src}
