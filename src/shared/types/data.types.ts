@@ -33,3 +33,59 @@ export type TPageData = {
   sections: any;
   footer: any;
 };
+
+export type TSection = {
+  _key: string;
+  _type: "twoColumn" | "oneColumn";
+  primary?: "left" | "right";
+  left?: TComponent[];
+  right?: TComponent[];
+  main?: TComponent[];
+};
+
+export type TComponent = TButton | TImageComponent | THeading | TContent;
+
+export type TButton = {
+  _type: "button";
+  _key: string;
+  slug: string;
+  href: string;
+  variant: "primary" | "secondary";
+  label: string;
+};
+
+export type TImage = {
+  _id?: string;
+  src: string;
+  alt: string;
+};
+
+export type TImageComponent = {
+  _type: "images";
+  _key: string;
+  shape: "normal" | "arc";
+  type: "single" | "multiple" | "group";
+  images: TImage[];
+};
+
+export type THeading = {
+  _type: "heading";
+  _key: string;
+  heading: string;
+};
+
+export type TContent = {
+  _type: "content";
+  _key: string;
+  content: {
+    _key: string;
+    _type: string;
+    style: string;
+    children: {
+      _key: string;
+      _type: string;
+      marks: string[];
+      text: string;
+    }[];
+  }[];
+};

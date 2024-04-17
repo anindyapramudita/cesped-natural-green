@@ -10,7 +10,36 @@ export const getPage = async ({ slug }: TGetPageProps) => {
   return client.fetch(groq`*[_type == "pages" && slug.current=="${currentSlug}" ][0]{
     _id,
       title,
-    sections,
+    sections[]{
+      ...,
+      right[]{
+        ...,
+        images[]->{
+          _id,
+          "src": src.asset->url,
+          alt
+      },
+        "slug": slug.current
+      },
+      left[]{
+        ...,
+        images[]->{
+        _id,
+        "src": src.asset->url,
+        alt
+      },
+        "slug": slug.current
+      },
+      main[]{
+        ...,
+        images[]->{
+        _id,
+        "src": src.asset->url,
+        alt
+      },
+        "slug": slug.current
+      }
+    },
       "slug": slug.current,
       hero{
         buttons[]{
@@ -20,7 +49,7 @@ export const getPage = async ({ slug }: TGetPageProps) => {
           label
         },
         title,
-        highlightTitle,
+          highlightTitle,
         subtitle,
         heroImage[]->{
           "src": src.asset->url,
@@ -39,6 +68,6 @@ export const getPage = async ({ slug }: TGetPageProps) => {
           "slug": slug.current
         }
       },
-      footer
+        footer
   }`);
 };

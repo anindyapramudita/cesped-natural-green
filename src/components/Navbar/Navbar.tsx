@@ -34,7 +34,7 @@ export const Navbar: FC<INavbarProps> = ({ navbar, slug }) => {
         navbar?.color && `bg-secondary-beige`
       }`}
     >
-      <header className="flex items-center justify-between gap-12 w-full w-full max-w-6xl border-b-[1px] border-primary-green py-4">
+      <header className="flex items-center justify-between gap-12 w-full max-w-6xl border-b-[1px] border-primary-green py-4">
         <ul className=" flex-1 flex items-center justify-between relative">
           {navbar?.logo && (
             <button

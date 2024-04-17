@@ -33,7 +33,7 @@ export const ArcSlideImages: FC<IArcSlideImagesProps> = ({ images }) => {
             images.map((image, index) => (
               <div
                 key={index}
-                className="h-96 w-full max-w-80 lg:w-80 transition-all ease-out duration-700"
+                className="max-w-80 w-full transition-all ease-out duration-700"
                 style={{
                   transform: `translateX(-${currentSlide * 100}%)`,
                 }}
