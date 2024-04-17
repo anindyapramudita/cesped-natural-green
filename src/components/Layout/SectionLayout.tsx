@@ -39,7 +39,7 @@ export const SectionLayout: FC<TSection> = ({
   if (_type === "twoColumn") {
     return (
       <div className="w-full flex flex-col items-center px-14 py-6 lg:p-12">
-        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 py-12">
           <div
             className={`${
               primary === "left" && "order-first"
