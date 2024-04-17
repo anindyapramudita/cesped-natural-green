@@ -1,0 +1,1 @@
+export { GroupImage } from "./GroupImage";
