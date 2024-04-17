@@ -1,0 +1,1 @@
+export { RegularImage } from "./RegularImage";
