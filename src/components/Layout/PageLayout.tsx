@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Hero, Navbar } from "..";
+import { Footer, Hero, Navbar } from "..";
 import { SectionLayout } from ".";
 import { TSection } from "@/shared/types/data.types";
 
@@ -9,7 +9,7 @@ interface IPageLayoutProps {
 }
 
 export const PageLayout: FC<IPageLayoutProps> = ({ content, slug }) => {
-  const { navbar, hero, sections } = content;
+  const { navbar, hero, sections, footer } = content;
   return (
     <div className="min-h-screen w-screen">
       <div className="z-10 w-screen fixed">
@@ -22,6 +22,7 @@ export const PageLayout: FC<IPageLayoutProps> = ({ content, slug }) => {
           sections.map((section: TSection) => (
             <SectionLayout {...section} key={section._key} />
           ))}
+        {footer && <Footer {...footer} />}
       </div>
     </div>
   );
