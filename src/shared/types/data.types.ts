@@ -89,3 +89,35 @@ export type TContent = {
     }[];
   }[];
 };
+
+export type TFooterSocialMedia = {
+  _key: string;
+  type: "facebook" | "instagram" | "pinterest" | "twitter" | "youtube";
+  value: string;
+};
+
+export type TFooterLink = {
+  _key: string;
+  name: string;
+  slug: string;
+};
+
+export type TFooterCategory = {
+  _key: string;
+  title: string;
+  links: TFooterLink[];
+};
+
+export type TFooterContact = {
+  _key: string;
+  type: "whatsapp" | "phone" | "email";
+  value: string;
+};
+
+export type TFooter = {
+  _type: "footer";
+  companyName: string;
+  socialMedia: TFooterSocialMedia[];
+  categories: TFooterCategory[];
+  contacts: TFooterContact[];
+};

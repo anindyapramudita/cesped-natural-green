@@ -30,7 +30,7 @@ export const Navbar: FC<INavbarProps> = ({ navbar, slug }) => {
 
   return (
     <div
-      className={`w-full px-14 lg:px-4 flex flex-col items-center ${
+      className={`w-full px-8 lg:px-4 flex flex-col items-center ${
         navbar?.color && `bg-secondary-beige`
       }`}
     >

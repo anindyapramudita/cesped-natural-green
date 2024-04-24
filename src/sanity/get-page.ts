@@ -68,6 +68,18 @@ export const getPage = async ({ slug }: TGetPageProps) => {
           "slug": slug.current
         }
       },
-        footer
+        footer->{
+          "_type": footerComponent._type, 
+          "companyName": footerComponent.companyName,
+          "socialMedia": footerComponent.socialMedia,
+          "categories": footerComponent.categories[]{
+            ...,
+            links[]{
+              ...,
+              "slug": slug.current 
+            }
+          },
+          "contacts": footerComponent.contacts,
+        }
   }`);
 };
