@@ -11,7 +11,7 @@ export const Hero: FC<IHeroProps> = ({
   buttons,
 }) => {
   return (
-    <div className="bg-secondary-beige flex flex-col items-center px-14 py-6 lg:p-12">
+    <div className="bg-secondary-beige flex flex-col items-center px-8 py-6 lg:p-12">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
         <h1 className="font-serif order-first text-center text-3xl sm:hidden">
           {title}{" "}
